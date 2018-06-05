@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Pirámide - Reto #2</title>
+        <meta charset="utf-8" />
+        <style>
+            @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+            body{font-size:14px;font-family:Tahoma;padding:15px;font-family:Roboto Condensed;background:#eee;}
+            .bloque{width:20px;height:20px;display:inline-block;border:1px solid #ccc;box-shadow:1px 1px 1px #ccc;margin:0;padding:0;}
+            .bloque-a{background:red;}
+            .bloque-b{background:green;}
+            #contenedor{width:600px;height:530px;background:#fff;border:1px solid #ddd;padding:20px 0px;display:table-cell;vertical-align:middle;text-align:center;}
+        </style>
+	</head>
+    <body>
+        
+        <h1>Reto #2</h1>
+        <p>Lo que se espera es que puedas realizar una pirámide como la que te mostramos a continuación dependiendo de la cantidad de filas que se le pase.</p>
+        <p>Abre este archivo para que veas como ha quedado el HTML de la pirámide, y ahí mismo puedas crear el script dentro de la función ConstruirPiramide(n)</p>
+        <p>Al acabar tu código mándame solo el script como respuesta en <a href="http://anexsoft.com/p/96/reto-2-la-piramide-de-javascript" target="_blank">La pirámide de javascript</a> para luego de revisarla y aprobarla, proceder a publicarla en la misma entrada. </p>
+        
+        <div id="contenedor">
+  
+        </div>
+        
+        <script>
+            /*
+            https://stackoverflow.com/questions/45112831/removing-all-html-tags-in-a-page-besides-a-tags-with-es6-javascript
+            https://stackoverflow.com/questions/6211613/testing-whether-a-value-is-odd-or-even
+            https://wesbos.com/template-strings-html/
+            https://www.mkyong.com/javascript/check-if-variable-is-a-number-in-javascript/
+*/
+
+            AskForNumber();
+
+            function AskForNumber(){
+
+                var number;
+                while(number==null || number=="" || typeof number=='number' ){
+                    number=window.prompt("ingrese numero de filas",0);
+                }
+                
+                ConstruirPiramide(number);
+                return;
+            }
+
+            function ConstruirPiramide(n)
+            {
+                var ladrillo = {
+                    a: '<span class="bloque bloque-a"></span>',
+                    b: '<span class="bloque bloque-b"></span>',
+                };
+
+                var contenedor = document.getElementById("contenedor");
+
+                while(contenedor.hasChildNodes())
+                    contenedor.removeChild(contenedor.firstChild);
+                
+                var b=`<br>`;
+                var finalString='';
+                
+                var row;
+                var column;
+                row=1;
+                for(row=1; row<=n;row++){                                                        
+                    column=1;
+                    for(column=1;column<=row;column++){
+                        if(row%2!=0){                            
+                            if(column%2!=0)
+                            {
+                                finalString+=ladrillo.a;
+                            }else{
+                                finalString+=ladrillo.b;
+                            }                            
+                        }else{
+                            if(column%2!=0)
+                            {
+                                finalString+=ladrillo.b;
+                            }else{
+                                finalString+=ladrillo.a;
+                            }                                
+                        }
+                    }                    
+                    finalString+=b;
+                }
+                
+                contenedor.innerHTML = finalString;
+
+                /* Implementar tu código */
+            }
+
+        </script>
+	</body>
+</html>

@@ -29,20 +29,28 @@
             https://stackoverflow.com/questions/6211613/testing-whether-a-value-is-odd-or-even
             https://wesbos.com/template-strings-html/
             https://www.mkyong.com/javascript/check-if-variable-is-a-number-in-javascript/
+
+            https://sarfraznawaz.wordpress.com/2012/01/26/javascript-self-invoking-functions/
+            https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know
+            https://www.w3schools.com/js/js_function_closures.asp
+
+
+
+
 */
 
-            AskForNumber();
 
-            function AskForNumber(){
+
+            (function AskForNumber(){
 
                 var number;
-                while(number==null || number=="" || typeof number=='number' ){
+                while(number==null || number=="" || number==0 ){                    
                     number=window.prompt("ingrese numero de filas",0);
                 }
                 
                 ConstruirPiramide(number);
                 return;
-            }
+            })();
 
             function ConstruirPiramide(n)
             {

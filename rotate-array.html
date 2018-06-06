@@ -1,0 +1,50 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    hello
+    <script>
+
+        /*
+            https://www.w3schools.com/js/js_arrays.asp
+            https://www.w3schools.com/js/js_array_methods.asp
+
+        */
+
+        (function solution(A, K) {
+            // write your code in JavaScript (Node.js 8.9.4)
+            console.log(A);
+            var times=K;
+            var ilength=A.length;
+            var firstBlock=[];
+            var secondBlock=[];
+            var result=[];
+            var newBeginPosition;
+            
+            if(times<ilength)
+            {
+                newBeginPosition=ilength-times;
+                firstBlock=A.splice(newBeginPosition,times);
+                secondBlock=A.splice(0,newBeginPosition);
+                result=firstBlock.concat(secondBlock);
+            }else if(times%ilength==0){
+                result=A;
+            }else{
+                newBeginPosition=ilength-(times%ilength);
+                firstBlock=A.splice(newBeginPosition,times);
+                secondBlock=A.splice(0,newBeginPosition);
+                result=firstBlock.concat(secondBlock);
+            }
+
+            console.log(result);
+            return result;
+            
+        })([3, 8, 9, 7, 6],8);
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Pirámide - Reto #2</title>
+        <meta charset="utf-8" />
+        <style>
+            @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+            body{font-size:14px;font-family:Tahoma;padding:15px;font-family:Roboto Condensed;background:#eee;}
+            .bloque{width:20px;height:20px;display:inline-block;border:1px solid #ccc;box-shadow:1px 1px 1px #ccc;margin:0;padding:0;}
+            .bloque-a{background:red;}
+            .bloque-b{background:green;}
+            #contenedor{width:600px;height:530px;background:#fff;border:1px solid #ddd;padding:20px 0px;display:table-cell;vertical-align:middle;text-align:center;}
+        </style>
+	</head>
+    <body>
+        
+        <h1>Reto #2</h1>
+        <p>Lo que se espera es que puedas realizar una pirámide como la que te mostramos a continuación dependiendo de la cantidad de filas que se le pase.</p>
+        <p>Abre este archivo para que veas como ha quedado el HTML de la pirámide, y ahí mismo puedas crear el script dentro de la función ConstruirPiramide(n)</p>
+        <p>Al acabar tu código mándame solo el script como respuesta en <a href="http://anexsoft.com/p/96/reto-2-la-piramide-de-javascript" target="_blank">La pirámide de javascript</a> para luego de revisarla y aprobarla, proceder a publicarla en la misma entrada. </p>
+        
+        <div id="contenedor">
+  
+        </div>
+        
+        <script>
+
+        /*
+            nomenclatura de nombres camelcase en cada variable.
+            user let, usar const
+            user foreach de javascript( pero no aplicaba en es caso)
+            poner la mejor actitud con el tecnical lead con actitud de perro.
+        */
+
+        //1. construir serie de fibonacci.
+        //2. summar los valores de fibonnaci.
+        //3. multiplicar por 4 los valores de fibonnaci.
+
+        /*
+            
+            
+
+        */
+
+        perimeter(0);
+        perimeter(1);
+        perimeter(2);
+        perimeter(3);
+        perimeter(4);
+        perimeter(5);
+
+        function perimeter(n) {
+
+            let result=0;                        
+            const firstValue=1;
+            let currentValue=0;
+            let secondPreviouseValue=0;
+            let firstPreviousValue=0;
+
+            for(i=0;i<=n;i++){
+                if(i===0)
+                {
+                    currentValue=firstValue;
+                }else if(i>0){
+                    currentValue=firstPreviousValue+secondPreviouseValue;
+                }
+                result+=currentValue;              
+                secondPreviouseValue=firstPreviousValue;
+                firstPreviousValue=currentValue;    
+            }            
+            console.log(4*result);
+            return 4*result;        
+                
+        }
+
+
+
+
+
+
+
+        </script>
+	</body>
+</html>

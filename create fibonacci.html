@@ -1,0 +1,45 @@
+<html>
+    <head>
+        test document
+    </head>
+    <body>
+        body document
+    </body>
+    <script>
+       //fibonacci: 0/  1,1,2,3,5,8
+
+        console.log(CreateFibonacci(4));
+
+        function CreateFibonacci(n){
+
+            let serie=[];
+            const oderZeroSerie=0;
+            const firstValueSerie=1;
+            let summary=0;
+
+            for(i=0;i<=n;i++){
+                if(i===0 || i===1){
+                    serie.push(firstValueSerie);
+                }else{
+                    serie.push(serie[i-1]+serie[i-2]);
+                }             
+            }
+            
+            serie.forEach(function(item, index){
+               summary+=item;
+            });
+                        
+            serie.sort(function(a,b){return a-b} );
+
+            console.log(serie.toString());
+
+            serie.sort(function(a,b){return b-a});
+
+            console.log(serie.toString());
+
+            return summary;
+
+        }
+
+    </script>
+</html>

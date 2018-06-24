@@ -15,7 +15,57 @@
     pass string to array n.split('');
     pass to array to string newArray.join('');
     get max from array: Math.max.apply(null,[]);
+    search inside of number array using indexOf
     */
+
+    console.log(`begin: pass string to array`);
+
+    const fibonacci='1,1,2,3,5,8,13'
+
+    let fibArray=fibonacci.split(',');
+    
+    console.log(`the final array is : ${fibArray.toString()}`);
+
+    console.log(`finished: pass string to array`);
+
+    console.log(`begin: pass array to string`);
+
+    let fibString=fibArray.join(';');
+
+    console.log(`the final string is : ${fibString}`);
+
+    console.log(`end: pass array to string`);
+
+    console.log(`begin: search in string`);
+
+    var str="hello world, welcome to universe";
+    var n=str.indexOf("welcome");
+
+    console.log(`position of the "welcome" text is  : ${n}`);
+
+    console.log(`end: search in string`);
+
+    console.log(`begin: search in array`);
+
+    console.log(`${fibArray.toString()}`)
+
+    let resultIndex=fibArray.indexOf('8');
+
+    console.log(`position of the "13" value is  : ${resultIndex}`);
+
+    console.log(`end: search in array`);
+
+    //
+
+        console.log(`begin: getting the max in array`);
+
+        const maxResult=Math.max.apply(null,fibArray);
+
+        console.log(`the max value in the array is  : ${maxResult}`);
+
+        console.log(`end: getting the max in array`);
+
+    /*
 
     let n='10001000001';
     getTheLongestZeroStringsUsingArray(n)
@@ -50,6 +100,8 @@
         //console.log(newArray.toString());
         //console.log(newArray.join(''));
     }
+
+    */
     
     </script>
 </html>
